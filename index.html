@@ -6,6 +6,8 @@
 <title>WhiTeXiterr</title>
 <meta name="description" content="WhiTeXiterr: program simpel dengan pendampingan langsung lewat WhatsApp. Layanan dengan janji temu, setiap hari.">
 <meta name="theme-color" content="#0A0E13">
+<meta name="color-scheme" content="dark">
+<script>document.documentElement.classList.add("js")</script>
 <meta property="og:title" content="WhiTeXiterr">
 <meta property="og:description" content="Program simpel dengan pendampingan langsung lewat WhatsApp. Layanan dengan janji temu, setiap hari.">
 <meta property="og:type" content="website">
@@ -149,7 +151,6 @@ h1 .hl { color: var(--accent); }
 .cta { position: relative; overflow: hidden; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; background: radial-gradient(520px circle at 100% 0%, var(--accent-glow), transparent 65%), var(--surface); border: 1px solid var(--line-strong); border-radius: 20px; padding: clamp(28px, 5vw, 56px); }
 .cta-copy { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
 .cta-copy p { color: var(--muted); max-width: 48ch; }
-.cta-number { font-family: var(--font-mono); font-size: 20px; color: var(--accent); letter-spacing: 0.02em; }
 .cta .btn { flex: 0 0 auto; min-height: 54px; padding: 0 32px; }
 
 /* Footer */
@@ -182,6 +183,41 @@ button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
 .chat-form input::placeholder { color: var(--muted); }
 .chat-form input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .chat-form button { flex: 0 0 auto; min-height: 48px; padding: 0 18px; border: 0; border-radius: 10px; background: var(--accent); color: var(--on-accent); font: inherit; font-weight: 600; cursor: pointer; }
+
+/* Polish */
+.card { position: relative; }
+.card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(108, 155, 255, 0.15), transparent 70%); opacity: 0; transition: opacity .25s; pointer-events: none; }
+.hero-bleed::after { content: ""; position: absolute; width: 520px; height: 520px; left: -160px; bottom: -260px; background: radial-gradient(circle, rgba(108, 155, 255, 0.16), transparent 65%); animation: drift 14s ease-in-out infinite alternate; pointer-events: none; }
+@keyframes drift { to { transform: translate(140px, -70px); } }
+h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
+@keyframes shine { to { background-position: -200% 0; } }
+.x-mark { animation: floaty 9s ease-in-out infinite; }
+@keyframes floaty { 50% { transform: translateY(-14px) rotate(2deg); } }
+.nav a { position: relative; }
+.nav a.active { color: var(--text); }
+.nav a.active::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 6px; height: 2px; border-radius: 2px; background: var(--accent); }
+.progress { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.progress b { color: var(--text); font-weight: 500; }
+.bar { flex: 1; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), #B4CCFF); transform-origin: left; animation: fill 2.2s .6s cubic-bezier(.2, .7, .2, 1) backwards; }
+@keyframes fill { from { transform: scaleX(0); } }
+.badge { position: absolute; top: -13px; right: 22px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--accent); color: var(--on-accent); font-weight: 500; padding: 5px 12px; border-radius: 999px; }
+.plan-day { align-self: flex-start; margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 999px; padding: 3px 10px; }
+.js .reveal:not(.in) { opacity: 0; }
+.js .reveal.in { animation: rise .7s cubic-bezier(.2, .7, .2, 1) backwards; animation-delay: var(--d, 0s); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+.fab { overflow: visible; }
+.fab::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--accent); animation: ring 2.8s ease-out infinite; pointer-events: none; }
+.fab[aria-expanded="true"]::after { display: none; }
+@keyframes ring { from { opacity: .6; transform: scale(1); } to { opacity: 0; transform: scale(1.55); } }
+.msg { animation: pop .25s ease; }
+@keyframes pop { from { opacity: 0; transform: translateY(6px); } }
+.msg.typing { display: flex; gap: 5px; align-items: center; padding: 15px 14px; }
+.msg.typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
+.msg.typing i:nth-child(2) { animation-delay: .15s; }
+.msg.typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes blink { 0%, 80%, 100% { opacity: .3; } 40% { opacity: 1; } }
+@media (hover: hover) { .card:hover::before { opacity: 1; } }
 
 @media (min-width: 760px) { .nav { display: flex; } }
 @media (min-width: 960px) { .step:not(:last-child) .line { display: block; } }
@@ -248,6 +284,7 @@ button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
           <div class="row"><span class="k">Layanan</span><span class="v">Dengan janji temu, setiap hari</span></div>
           <div class="row"><span class="k">Pembaruan</span><span class="v">Berkala</span></div>
         </div>
+        <div class="progress" aria-hidden="true"><span>Pemasangan</span><div class="bar"><i></i></div><b>100%</b></div>
         <div class="window-foot"><span class="dot"></span>Siap dipakai</div>
       </div>
     </div>
@@ -340,6 +377,7 @@ button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
         <a class="btn btn-ghost" href="https://wa.me/6283134125339?text=Halo%20WhiTeXiterr%2C%20saya%20mau%20pesan%20Paket%201.">Pilih Paket 1</a>
       </div>
       <div class="card plan featured">
+        <span class="badge">Rekomendasi</span>
         <div class="plan-top">
           <span class="plan-name">Paket 2</span>
           <span class="plan-price">Rp 75.000</span>
@@ -402,7 +440,6 @@ button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
       <div class="cta-copy">
         <h2>Siap mulai? Kirim pesan sekarang.</h2>
         <p>Sebutkan paket yang kamu minati dan waktu yang cocok. Kami balas lewat WhatsApp.</p>
-        <p class="cta-number">0831-3412-5339</p>
       </div>
       <a class="btn btn-primary" href="https://wa.me/6283134125339?text=Halo%20WhiTeXiterr%2C%20saya%20mau%20tanya%20tentang%20programnya.">Buka WhatsApp</a>
     </div>
@@ -449,6 +486,8 @@ button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
   // Pengaturan: ubah di sini kalau data bisnismu berubah.
   // Harga paket dibaca otomatis dari bagian "Paket" di halaman ini.
   var WA = '6283134125339';
+  // Alamat server AI (lihat worker.js). Kosongkan untuk memakai jawaban otomatis biasa.
+  var AI_ENDPOINT = '';
   var INFO = { perangkat: 'Android', versi: 'v1.0', jam: 'setiap hari, dengan janji temu' };
 
   var chat = document.getElementById('chat');
@@ -567,7 +606,9 @@ button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
   }
 
   function respond(entry, q) {
-    var typing = addMsg('bot', '...');
+    var typing = addMsg('bot', '');
+    typing.classList.add('typing');
+    typing.innerHTML = '<i></i><i></i><i></i>';
     setTimeout(function () {
       typing.remove();
       addMsg('bot', typeof entry.answer === 'function' ? entry.answer() : entry.answer);
@@ -614,8 +655,83 @@ button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
     if (!q) return;
     addMsg('me', q);
     input.value = '';
-    respond(match(q), q);
+    ask(q);
   });
+
+  // Mode AI: pesan dikirim ke server sendiri (kunci API tidak boleh ada di halaman).
+  var hist = [], busy = false;
+  function dots(el) { el.classList.add('typing'); el.innerHTML = '<i></i><i></i><i></i>'; }
+  function ask(q) {
+    if (!AI_ENDPOINT) { respond(match(q), q); return; }
+    if (busy) return;
+    busy = true;
+    hist.push({ role: 'user', content: q });
+    var typing = addMsg('bot', ''); dots(typing);
+    var ctrl = new AbortController();
+    var to = setTimeout(function () { ctrl.abort(); }, 20000);
+    fetch(AI_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: hist.slice(-10) }), signal: ctrl.signal })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        var t = ((d && d.reply) || '').trim();
+        if (!t) throw new Error('kosong');
+        typing.remove();
+        addMsg('bot', t);
+        hist.push({ role: 'assistant', content: t });
+        if (/whatsapp/i.test(t)) addWa(q);
+      })
+      .catch(function () {
+        hist.pop();
+        typing.remove();
+        var m = match(q);
+        addMsg('bot', typeof m.answer === 'function' ? m.answer() : m.answer);
+        if (m.wa) addWa(q);
+      })
+      .finally(function () { clearTimeout(to); busy = false; });
+  }
+  if (AI_ENDPOINT) document.querySelector('.chat-title span').textContent = 'Asisten AI, bukan manusia';
+
+  // Harga per hari dihitung otomatis dari harga dan masa paket.
+  document.querySelectorAll('.plan').forEach(function (p) {
+    var pr = p.querySelector('.plan-price'), t = p.querySelector('.plan-term'), top = p.querySelector('.plan-top');
+    if (!pr || !t || !top) return;
+    var price = parseInt(pr.textContent.replace(/\D/g, ''), 10), days = parseInt(t.textContent.replace(/\D/g, ''), 10);
+    if (!price || !days) return;
+    var d = document.createElement('span');
+    d.className = 'plan-day';
+    d.textContent = '≈ Rp ' + Math.round(price / days).toLocaleString('id-ID') + ' / hari';
+    top.appendChild(d);
+  });
+
+  // Efek cahaya mengikuti kursor di kartu.
+  document.querySelectorAll('.card').forEach(function (c) {
+    c.addEventListener('pointermove', function (e) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // Muncul halus saat di-scroll + menu aktif sesuai bagian.
+  var hasIO = 'IntersectionObserver' in window;
+  var rev = hasIO ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rev.unobserve(e.target); } });
+  }, { threshold: 0.12 }) : null;
+  document.querySelectorAll('.hero-copy > *, .hero-visual, .head, .card, .step, .faq, .cta').forEach(function (el) {
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty('--d', (i % 4) * 0.08 + 's');
+    el.classList.add('reveal');
+    if (rev) rev.observe(el); else el.classList.add('in');
+  });
+  if (hasIO) {
+    var links = {};
+    document.querySelectorAll('.nav a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === e.target.id); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(links).forEach(function (k) { var sec = document.getElementById(k); if (sec) spy.observe(sec); });
+  }
 })();
 </script>
 </body>
