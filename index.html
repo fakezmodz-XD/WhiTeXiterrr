@@ -5,30 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WhiTeXiterr</title>
 <meta name="description" content="WhiTeXiterr: program simpel dengan pendampingan langsung lewat WhatsApp. Layanan dengan janji temu, setiap hari.">
-<meta name="theme-color" content="#0A0E13">
+<meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
 <script>document.documentElement.classList.add("js")</script>
 <meta property="og:title" content="WhiTeXiterr">
 <meta property="og:description" content="Program simpel dengan pendampingan langsung lewat WhatsApp. Layanan dengan janji temu, setiap hari.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0E13'/%3E%3Cpath d='M20 18l24 28M44 18L20 46' stroke='%236C9BFF' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000000'/%3E%3Cpath d='M20 18l24 28M44 18L20 46' stroke='%231FD6A4' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&family=Instrument+Serif:ital@0;1&display=swap">
 <style>
 :root {
-  --bg: #0A0E13;
-  --surface: #10161E;
-  --line: #1C2530;
-  --line-strong: #2A3544;
-  --text: #EAEFF5;
-  --muted: #9AA7B5;
-  --accent: #6C9BFF;
-  --accent-soft: rgba(108, 155, 255, 0.14);
-  --accent-line: rgba(108, 155, 255, 0.38);
-  --accent-glow: rgba(108, 155, 255, 0.22);
-  --on-accent: #06101F;
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --bg: #000000;
+  --surface: #0A2540;
+  --line: #12365A;
+  --line-strong: #1B4B7A;
+  --text: #F2F7FB;
+  --muted: #93A8BD;
+  --accent: #1FD6A4;
+  --accent-soft: rgba(25, 214, 160, 0.14);
+  --accent-line: rgba(25, 214, 160, 0.38);
+  --accent-glow: rgba(25, 214, 160, 0.22);
+  --on-accent: #02130E;
+  --font-display: Inter, system-ui, sans-serif;
   --font-body: Inter, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
@@ -56,7 +56,7 @@ svg { display: block; }
 .section > .wrap { padding-top: 96px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 44px; }
 
 /* Header */
-.site-header { position: sticky; top: 0; z-index: 50; background: rgba(10, 14, 19, 0.82); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(0, 0, 0, 0.82); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
 .logo { font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; min-height: 44px; display: inline-flex; align-items: center; }
 .logo span { color: var(--accent); }
@@ -85,7 +85,7 @@ h3 { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-h
 .hero-copy { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
 .chip { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent-line); background: var(--accent-soft); border-radius: 999px; padding: 7px 14px; }
 .dot { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-out infinite; }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(108, 155, 255, 0.55); } 100% { box-shadow: 0 0 0 10px rgba(108, 155, 255, 0); } }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(25, 214, 160, 0.55); } 100% { box-shadow: 0 0 0 10px rgba(25, 214, 160, 0); } }
 h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 6.4vw, 68px); line-height: 1.04; letter-spacing: -0.025em; text-wrap: balance; }
 h1 .hl { color: var(--accent); }
 .hero-copy > p { font-size: 18px; color: var(--muted); max-width: 52ch; }
@@ -107,7 +107,7 @@ h1 .hl { color: var(--accent); }
 .row .k { font-size: 14px; color: var(--muted); }
 .row .v { font-size: 15px; text-align: right; }
 .row .ph { font-size: 14px; }
-.window-foot { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--line); background: rgba(108, 155, 255, 0.05); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--text); }
+.window-foot { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--line); background: rgba(25, 214, 160, 0.05); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--text); }
 
 /* Strip */
 .strip { border-top: 1px solid var(--line); background: var(--surface); }
@@ -159,14 +159,14 @@ h1 .hl { color: var(--accent); }
 .footer-links a { min-height: 44px; padding: 0 12px; display: inline-flex; align-items: center; }
 
 /* Floating chat */
-.fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px -8px rgba(108, 155, 255, 0.65); transition: transform .2s; }
+.fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px -8px rgba(25, 214, 160, 0.65); transition: transform .2s; }
 
 /* Chatbot */
 button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
 .chat { position: fixed; z-index: 70; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 72px); width: min(380px, calc(100vw - 32px)); height: min(560px, calc(100vh - 120px)); height: min(560px, calc(100dvh - 120px)); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.85); }
 .chat[hidden] { display: none; }
 .chat:focus { outline: none; }
-.chat-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 8px 8px 16px; border-bottom: 1px solid var(--line); background: rgba(108, 155, 255, 0.06); }
+.chat-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 8px 8px 16px; border-bottom: 1px solid var(--line); background: rgba(25, 214, 160, 0.06); }
 .chat-title { display: flex; flex-direction: column; min-width: 0; }
 .chat-title strong { font-family: var(--font-display); font-weight: 500; font-size: 16px; }
 .chat-title span { font-size: 12px; color: var(--muted); }
@@ -186,10 +186,10 @@ button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
 
 /* Polish */
 .card { position: relative; }
-.card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(108, 155, 255, 0.15), transparent 70%); opacity: 0; transition: opacity .25s; pointer-events: none; }
-.hero-bleed::after { content: ""; position: absolute; width: 520px; height: 520px; left: -160px; bottom: -260px; background: radial-gradient(circle, rgba(108, 155, 255, 0.16), transparent 65%); animation: drift 14s ease-in-out infinite alternate; pointer-events: none; }
+.card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(25, 214, 160, 0.15), transparent 70%); opacity: 0; transition: opacity .25s; pointer-events: none; }
+.hero-bleed::after { content: ""; position: absolute; width: 520px; height: 520px; left: -160px; bottom: -260px; background: radial-gradient(circle, rgba(25, 214, 160, 0.16), transparent 65%); animation: drift 14s ease-in-out infinite alternate; pointer-events: none; }
 @keyframes drift { to { transform: translate(140px, -70px); } }
-h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
+h1 .hl { background: linear-gradient(90deg, #1FD6A4, #8FF0D2, #1FD6A4); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite; }
 @keyframes shine { to { background-position: -200% 0; } }
 .x-mark { animation: floaty 9s ease-in-out infinite; }
 @keyframes floaty { 50% { transform: translateY(-14px) rotate(2deg); } }
@@ -199,7 +199,7 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
 .progress { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
 .progress b { color: var(--text); font-weight: 500; }
 .bar { flex: 1; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
-.bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), #B4CCFF); transform-origin: left; animation: fill 2.2s .6s cubic-bezier(.2, .7, .2, 1) backwards; }
+.bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), #8FF0D2); transform-origin: left; animation: fill 2.2s .6s cubic-bezier(.2, .7, .2, 1) backwards; }
 @keyframes fill { from { transform: scaleX(0); } }
 .badge { position: absolute; top: -13px; right: 22px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--accent); color: var(--on-accent); font-weight: 500; padding: 5px 12px; border-radius: 999px; }
 .plan-day { align-self: flex-start; margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 999px; padding: 3px 10px; }
@@ -224,7 +224,7 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
 @media (hover: hover) {
   .nav a:hover { color: var(--text); }
   .card:hover { transform: translateY(-3px); border-color: var(--accent-line); }
-  .btn-primary:hover { transform: translateY(-2px); background: #85AAFF; }
+  .btn-primary:hover { transform: translateY(-2px); background: #4DE4BC; }
   .btn-ghost:hover { border-color: var(--accent-line); transform: translateY(-2px); }
   .fab:hover { transform: scale(1.06); }
 }
@@ -232,15 +232,158 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Upgrade */
+body { background-image: radial-gradient(900px circle at 0% 30%, rgba(108,155,255,.05), transparent 60%); }
+h1, h2 { font-weight: 800; }
+.scrollbar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 80; pointer-events: none; }
+.scrollbar i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #8FF0D2); transform-origin: left; transform: scaleX(0); }
+.x-mark { translate: calc(var(--px, 0) * 22px) calc(var(--py, 0) * 22px); transition: translate .35s ease-out; -webkit-text-stroke-width: 2px; opacity: .7; }
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); }
+.bento .card { grid-column: span 12; flex: none; }
+.wa-mock { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+.wa-mock .b { max-width: 84%; padding: 9px 13px; border-radius: 14px; font-size: 14px; line-height: 1.45; }
+.wa-mock .me { align-self: flex-end; background: var(--accent); color: var(--on-accent); border-bottom-right-radius: 4px; }
+.wa-mock .bot { align-self: flex-start; background: var(--surface); border: 1px solid var(--line-strong); border-bottom-left-radius: 4px; }
+.plan-save { align-self: flex-start; margin-top: 6px; font-size: 13px; font-weight: 600; color: var(--text); }
+.plan.featured .plan-price { font-size: 44px; }
+.plan { padding-top: 34px; }
+@media (min-width: 900px) {
+  .bento .card:nth-child(1) { grid-column: span 5; }
+  .bento .card:nth-child(2) { grid-column: span 7; }
+  .bento .card:nth-child(3) { grid-column: span 7; }
+  .bento .card:nth-child(4) { grid-column: span 5; }
+  .plan.featured { transform: translateY(-10px); }
+}
+@media (max-width: 759px) { .site-header .btn-sm { padding: 0 14px; } .logo { font-size: 19px; } }
+
+/* Menu HP + chat */
+.menu-btn { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--line-strong); border-radius: 10px; background: transparent; color: var(--text); cursor: pointer; }
+@media (max-width: 759px) {
+  .menu-btn { display: inline-flex; }
+  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 16px; background: rgba(0, 0, 0, 0.97); border-bottom: 1px solid var(--line); }
+  .nav.open { display: flex; animation: pop .2s ease; }
+  .nav a { font-size: 17px; border-top: 1px solid var(--line); }
+  .nav a:first-child { border-top: 0; }
+  .nav a.active::after { left: 0; right: auto; width: 24px; bottom: 8px; }
+}
+.chat-title strong::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--accent); vertical-align: middle; animation: pulse 2.4s ease-out infinite; }
+.chips { flex-wrap: wrap; overflow: visible; }
+.chip-btn { background: var(--accent-soft); border-color: var(--accent-line); }
+.msg-wa { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.msg.bot { background: var(--bg); }
+
+/* Tema: hitam + biru tua + toska */
+#net { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+main, .footer { position: relative; z-index: 1; }
+.section { border-top-color: transparent; }
+.eyebrow { display: flex; align-items: center; gap: 14px; font-size: 13px; letter-spacing: .32em; }
+.eyebrow::before { content: ""; width: 52px; height: 2px; background: var(--accent); }
+h1, h2 { font-family: Inter, system-ui, sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+h3 { font-weight: 600; }
+.card { border-radius: 22px; background: var(--surface); }
+.wa-mock, .msg.bot { background: #061a30; }
+.window { background: #02101d; border-radius: 20px; font-family: var(--font-mono); }
+.window .row .k, .window .row .v { font-family: var(--font-mono); font-size: 14px; }
+.window-title::before { content: "$ "; color: var(--accent); }
+.window-foot { color: var(--accent); }
+.window-foot::after { content: ""; width: 9px; height: 16px; background: var(--accent); animation: caret 1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+.chip, .plan-day, .badge { font-family: var(--font-mono); }
+.strip { background: rgba(10, 37, 64, .55); }
+.quote .wrap { align-items: center; text-align: center; gap: 24px; }
+.quote blockquote { margin: 0; max-width: 20ch; font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(38px, 7vw, 72px); line-height: 1.05; }
+.quote blockquote::after { content: ""; display: block; width: 96px; height: 2px; background: var(--text); margin: 32px auto 0; }
+.quote p { font-style: italic; max-width: 40ch; }
+.cta h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); letter-spacing: -0.01em; }
+
+/* Kartu 2 kolom dengan kotak ikon pastel */
+.bento { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.bento .card { grid-column: auto; padding: 22px; gap: 10px; border-radius: 22px; }
+.bento .icon { width: 53px; height: 53px; border-radius: 14px; border: 0; color: #0A2540; margin-bottom: 6px; }
+.bento .icon svg { width: 26px; height: 26px; }
+.bento .card:nth-child(1) .icon { background: #BDE8F5; }
+.bento .card:nth-child(2) .icon { background: #FFD6DE; }
+.bento .card:nth-child(3) .icon { background: #D5D9FA; }
+.bento .card:nth-child(4) .icon { background: #FFE3C7; }
+.bento h3 { font-size: 20px; font-weight: 600; }
+.bento .card p { font-size: 15px; line-height: 1.55; }
+.wa-mock { display: none; }
+@media (min-width: 900px) {
+  .bento { gap: 20px; }
+  .bento .card { padding: 28px; }
+  .bento .card:nth-child(1) { grid-column: span 1; }
+  .bento .card:nth-child(2) { grid-column: span 1; }
+  .bento .card:nth-child(3) { grid-column: span 1; }
+  .bento .card:nth-child(4) { grid-column: span 1; }
+  .wa-mock { display: flex; }
+}
+
+/* Ringkasan: kartu 2 kolom + kotak ikon */
+.tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.tiles .card { padding: 22px; gap: 8px; border-radius: 22px; }
+.tile { width: 53px; height: 53px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #0A2540; margin-bottom: 8px; }
+.tiles .card:nth-child(1) .tile { background: #BDE8F5; }
+.tiles .card:nth-child(2) .tile { background: #FFD6DE; }
+.tiles .card:nth-child(3) .tile { background: #D5D9FA; }
+.tiles .card:nth-child(4) .tile { background: #FFE3C7; }
+.tiles .card:nth-child(5) .tile { background: #C9F2E3; }
+.tiles h3 { font-size: 20px; font-weight: 600; }
+.tiles .card p { font-size: 15px; }
+@media (min-width: 900px) { .tiles { grid-template-columns: repeat(3, 1fr); gap: 20px; } .tiles .card { padding: 28px; } }
+
+/* Profil dan bingkai */
+.profile { position: relative; z-index: 1; text-align: center; padding-bottom: 8px; }
+.banner { display: block; width: 100%; height: clamp(200px, 36vw, 340px); }
+.avatar { position: relative; width: 136px; height: 136px; margin: -68px auto 0; border-radius: 50%; background: #02101d; border: 1px solid var(--line-strong); box-shadow: 0 0 0 5px #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 78px; line-height: 1; color: var(--accent); }
+.avatar span { filter: drop-shadow(0 0 14px rgba(25, 214, 160, .55)); }
+.pf-name { margin: 22px 0 0; font-size: clamp(32px, 6vw, 48px); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; }
+.pf-role { margin: 8px 0 0; font-size: clamp(13px, 3.4vw, 18px); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.pf-pill { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; padding: 12px 22px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 17px; }
+
+#bahasa .card:nth-child(5) .tile { background: #BDE8F5; }
+
+/* Tools ngoding */
+.tools { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.tools .card { padding: 24px; gap: 16px; border-radius: 22px; }
+.tool-head { display: flex; align-items: center; gap: 14px; }
+.tool-head svg { color: var(--accent); flex: 0 0 auto; }
+.tool-head h3 { font-size: 20px; font-weight: 600; }
+.pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill { font-family: var(--font-mono); font-size: 14px; padding: 8px 14px; border: 1px solid var(--line-strong); border-radius: 12px; background: rgba(0, 0, 0, .28); }
+@media (min-width: 900px) { .tools { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
+/* Terminal */
+.term { background: #02101d; border: 1px solid var(--line-strong); border-radius: 22px; overflow: hidden; font-family: var(--font-mono); }
+.term-bar { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.term-title { font-size: 14px; color: var(--muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.term-status { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.term-body { padding: 22px 24px 28px; min-height: 300px; font-size: 16px; line-height: 2; overflow-wrap: anywhere; }
+.term .p { color: var(--accent); }
+.term .out { color: var(--text); margin-bottom: 4px; }
+.caret { display: inline-block; width: 10px; height: 18px; vertical-align: text-bottom; background: var(--accent); animation: caret 1s steps(1) infinite; }
+.js .term-body .tl { display: none; }
+.js .term-body .tl.on { display: block; }
+
+
+
+/* Live chat */
+.msg small { display: block; margin-top: 4px; font-size: 11px; opacity: .6; text-align: right; }
+.chat-admin { flex: 0 0 auto; margin: 0 12px; min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid var(--accent-line); background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 14px; }
+.fab-dot { position: absolute; top: 2px; right: 2px; width: 15px; height: 15px; border-radius: 50%; background: #FF5A6A; border: 2px solid var(--bg); z-index: 1; }
+.fab-tip { position: fixed; z-index: 60; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 74px); max-width: min(260px, calc(100vw - 32px)); padding: 12px 16px; border: 1px solid var(--line-strong); border-radius: 16px 16px 4px 16px; background: var(--surface); color: var(--text); font: inherit; font-size: 15px; line-height: 1.4; text-align: left; cursor: pointer; box-shadow: 0 16px 40px -12px rgba(0, 0, 0, .8); animation: pop .3s ease; }
+.fab-tip[hidden], .fab-dot[hidden] { display: none; }
 </style>
 </head>
 <body>
 <a class="skip" href="#konten">Lompat ke konten</a>
+<canvas id="net" aria-hidden="true"></canvas>
+<div class="scrollbar" aria-hidden="true"><i></i></div>
 
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="#atas" aria-label="WhiTeXiterr, ke atas">WhiTe<span>X</span>iterr</a>
-    <nav class="nav" aria-label="Menu utama">
+    <nav class="nav" id="nav" aria-label="Menu utama">
       <a href="#fitur">Keunggulan</a>
       <a href="#cara">Cara pakai</a>
       <a href="#harga">Paket</a>
@@ -248,12 +391,39 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
     </nav>
     <div class="header-actions">
       <a class="btn btn-primary btn-sm" href="https://wa.me/6283134125339?text=Halo%20WhiTeXiterr%2C%20saya%20mau%20tanya%20tentang%20programnya.">Chat WhatsApp</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
     </div>
   </div>
 </header>
 
 <main id="konten">
 <div id="atas"></div>
+
+<section class="profile">
+  <div class="banner-wrap">
+    <svg class="banner" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pemandangan gunung, gerbang torii, dan bunga sakura saat senja">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#140a4a"/><stop offset=".45" stop-color="#6a2fb8"/><stop offset=".75" stop-color="#ff5fa2"/><stop offset="1" stop-color="#ffb28a"/></linearGradient>
+        <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2d6"/><stop offset=".35" stop-color="#ffc58f" stop-opacity=".7"/><stop offset="1" stop-color="#ff7aa8" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="800" height="300" fill="url(#sky)"/>
+      <g fill="#fff"><circle cx="60" cy="30" r="1.4"/><circle cx="140" cy="62" r="1"/><circle cx="230" cy="24" r="1.6"/><circle cx="330" cy="50" r="1"/><circle cx="410" cy="18" r="1.3"/><circle cx="690" cy="26" r="1.2"/><circle cx="760" cy="70" r="1"/></g>
+      <circle cx="520" cy="225" r="120" fill="url(#sun)"/>
+      <polygon points="0,270 120,160 152,132 184,160 330,270" fill="#3a2a78"/>
+      <polygon points="120,160 152,132 184,160 168,168 152,152 136,170" fill="#eef0ff"/>
+      <polygon points="600,270 700,170 800,200 800,270" fill="#2a1f5c"/>
+      <g fill="#c4162a"><rect x="478" y="128" width="14" height="150"/><rect x="552" y="128" width="14" height="150"/><path d="M444 112Q522 94 600 112L594 128H450Z"/><rect x="468" y="150" width="108" height="9"/></g>
+      <path d="M690 290C700 230 690 180 720 120" stroke="#3a1a2e" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <g fill="#ff7db0"><circle cx="690" cy="110" r="34" opacity=".9"/><circle cx="735" cy="95" r="38" opacity=".85"/><circle cx="770" cy="135" r="32" opacity=".9"/><circle cx="715" cy="150" r="30" opacity=".8"/><circle cx="660" cy="150" r="24" opacity=".8"/></g>
+      <g fill="#ffd0e2" opacity=".9"><ellipse cx="600" cy="190" rx="4" ry="2.2"/><ellipse cx="640" cy="230" rx="4" ry="2.2"/><ellipse cx="560" cy="215" rx="3" ry="2"/><ellipse cx="450" cy="200" rx="3.5" ry="2"/></g>
+      <path d="M0 262Q120 238 240 262T480 268T800 258V300H0Z" fill="#1a0f2e"/>
+    </svg>
+  </div>
+  <div class="avatar" aria-hidden="true"><span>X</span></div>
+  <p class="pf-name">WhiTeXiterr</p>
+  <p class="pf-role">Program simpel / Pendampingan</p>
+  <span class="pf-pill"><span class="dot"></span>Layanan dengan janji temu</span>
+</section>
 
 <section class="hero-bleed">
   <div class="wrap hero">
@@ -302,10 +472,9 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
 <section class="section" id="fitur">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Keunggulan</span>
       <h2>Dibuat supaya kamu tidak perlu repot.</h2>
     </div>
-    <div class="cards">
+    <div class="cards bento">
       <div class="card">
         <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10m0 0l-4-4m4 4l4-4M5 19h14"></path></svg></div>
         <h3>Mudah dipasang</h3>
@@ -315,6 +484,7 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
         <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14a1 1 0 011 1v8a1 1 0 01-1 1h-8l-4 3.5V16H5a1 1 0 01-1-1V7a1 1 0 011-1z"></path></svg></div>
         <h3>Didampingi langsung</h3>
         <p class="muted">Ada kendala? Kirim pesan ke WhatsApp dan kami bantu sampai selesai.</p>
+        <div class="wa-mock" aria-hidden="true"><span class="b me">Halo, saya mau pasang programnya.</span><span class="b bot">Siap! Kita mulai langkah pertama ya.</span><span class="b bot">Sudah jalan? Kabari kami kalau ada yang macet.</span></div>
       </div>
       <div class="card">
         <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4.5l3 1.5"></path></svg></div>
@@ -333,7 +503,6 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
 <section class="section" id="cara">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Cara pakai</span>
       <h2>Tiga langkah sampai program berjalan.</h2>
     </div>
     <ol class="steps">
@@ -356,10 +525,87 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
   </div>
 </section>
 
+<section class="section" id="ringkasan">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Ringkasan</span>
+      <h2>Program dalam lima poin.</h2>
+      <p class="muted">Hal-hal yang perlu kamu tahu sebelum memilih paket.</p>
+    </div>
+    <div class="tiles">
+      <div class="card"><div class="tile"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 00-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1012 3.5z"></path><path d="M9.2 8.3c-.3 3.2 3.3 6.8 6.5 6.5l.9-1.3-2.2-1.1-.9.9c-1-.4-2-1.4-2.4-2.4l.9-.9-1.1-2.2z" fill="currentColor" stroke="none"></path></svg></div><h3>WhatsApp</h3><p class="muted">Pendampingan langsung</p></div>
+      <div class="card"><div class="tile"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10m0 0l-4-4m4 4l4-4M5 19h14"></path></svg></div><h3>Panduan</h3><p class="muted">Pemasangan yang jelas</p></div>
+      <div class="card"><div class="tile"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12a7 7 0 11-2.2-5.1M19 5v4h-4"></path></svg></div><h3>Pembaruan</h3><p class="muted">Diperbarui berkala</p></div>
+      <div class="card"><div class="tile"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4.5l3 1.5"></path></svg></div><h3>Janji temu</h3><p class="muted">Dilayani setiap hari</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tentang">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Tentang</span>
+      <h2>Sekilas WhiTeXiterr</h2>
+      <p class="muted">Ringkasan singkat lewat terminal.</p>
+    </div>
+    <div class="term">
+      <div class="term-bar">
+        <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="term-title">whitexiterr@shell: ~</span>
+        <span class="term-status"><span class="dot"></span>Online</span>
+      </div>
+      <div class="term-body" id="term">
+        <div class="tl"><span class="p">$</span> <span class="cmd">whoami</span></div>
+        <div class="tl out">WhiTeXiterr</div>
+        <div class="tl"><span class="p">$</span> <span class="cmd">cat layanan</span></div>
+        <div class="tl out">program simpel, pendampingan langsung lewat WhatsApp</div>
+        <div class="tl"><span class="p">$</span> <span class="cmd">cat jadwal</span></div>
+        <div class="tl out">setiap hari, dengan janji temu</div>
+        <div class="tl"><span class="p">$</span> <span class="cmd">cat perangkat</span></div>
+        <div class="tl out">Android</div>
+        <div class="tl"><span class="p">$</span> <span class="cmd">cat pembaruan</span></div>
+        <div class="tl out">berkala</div>
+        <div class="tl"><span class="p">$</span> <span class="caret" aria-hidden="true"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bahasa">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Bahasa pemrograman</span>
+      <h2>Bahasa favorit</h2>
+      <p class="muted">Lima bahasa yang paling sering dipakai untuk membangun sistem.</p>
+    </div>
+    <div class="tiles">
+      <div class="card"><div class="tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l8 4.6v9.8l-8 4.6-8-4.6V7.1z"/><text x="12" y="14.8" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="7.5" fill="#BDE8F5">C++</text></svg></div><h3>C++</h3><p class="muted">Sistem dan performa</p></div>
+      <div class="card"><div class="tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1.2"/><text x="19" y="19" text-anchor="end" font-family="Inter, sans-serif" font-weight="800" font-size="9" fill="#FFD6DE">JS</text></svg></div><h3>JavaScript</h3><p class="muted">Web dan tooling</p></div>
+      <div class="card"><div class="tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H10C8 3 7 4 7 5.5V8h5v1H5.5C4 9 3 10.3 3 12.5S4 16 5.5 16H7v-2.5C7 12 8.2 11 9.5 11h4c1.1 0 2-.9 2-2V5.5C15.5 4 13.8 3 11.5 3z"/><circle cx="9.4" cy="5.4" r=".9" fill="#D5D9FA"/><g transform="rotate(180 12 12)"><path d="M11.5 3H10C8 3 7 4 7 5.5V8h5v1H5.5C4 9 3 10.3 3 12.5S4 16 5.5 16H7v-2.5C7 12 8.2 11 9.5 11h4c1.1 0 2-.9 2-2V5.5C15.5 4 13.8 3 11.5 3z"/><circle cx="9.4" cy="5.4" r=".9" fill="#D5D9FA"/></g></svg></div><h3>Python</h3><p class="muted">Otomasi dan riset</p></div>
+      <div class="card"><div class="tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="5.6"/><text x="12" y="14.6" text-anchor="middle" font-family="Inter, sans-serif" font-style="italic" font-weight="800" font-size="7.5" fill="#FFE3C7">php</text></svg></div><h3>PHP</h3><p class="muted">Backend web</p></div>
+      <div class="card"><div class="tile"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l8 4.6v9.8l-8 4.6-8-4.6V7.1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12l8-4.9v9.8l-8 4.6z"/><text x="16" y="17" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="5" fill="#BDE8F5">$_</text></svg></div><h3>Shell</h3><p class="muted">Otomasi Linux</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tools">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Ngoding</span>
+      <h2>Tools ngoding</h2>
+      <p class="muted">Perangkat yang biasa dipakai untuk menulis, menjalankan, dan menguji kode.</p>
+    </div>
+    <div class="tools">
+      <div class="card"><div class="tool-head"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"></path></svg><h3>Editor dan Terminal</h3></div><div class="pills"><span class="pill">VS Code</span><span class="pill">Vim</span><span class="pill">Termux</span><span class="pill">Git</span><span class="pill">GitHub</span></div></div>
+      <div class="card"><div class="tool-head"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1.5"></rect><rect x="4" y="14" width="16" height="6" rx="1.5"></rect><path d="M8 7h.01M8 17h.01"></path></svg><h3>Web dan Backend</h3></div><div class="pills"><span class="pill">Node.js</span><span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">Nginx</span><span class="pill">Postman</span></div></div>
+      <div class="card"><div class="tool-head"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.2"></rect><path d="M11 18h2"></path></svg><h3>Android</h3></div><div class="pills"><span class="pill">Android Studio</span><span class="pill">Gradle</span><span class="pill">ADB</span><span class="pill">Logcat</span></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="harga">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Paket</span>
       <h2>Pilih paket yang pas.</h2>
     </div>
     <div class="cards">
@@ -410,7 +656,6 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
 <section class="section" id="faq">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">Tanya jawab</span>
       <h2>Pertanyaan yang sering muncul.</h2>
     </div>
     <div class="faq">
@@ -427,10 +672,21 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
         <p>Layanan berjalan dengan janji temu, setiap hari. Sebutkan waktu yang kamu mau saat mengirim pesan.</p>
       </details>
       <details>
+        <summary>Kalau ada kendala saat pemasangan?</summary>
+        <p>Kirim pesan lewat WhatsApp dan ceritakan kendalamu. Kami temani langkah demi langkah sampai program berjalan.</p>
+      </details>
+      <details>
         <summary>Bagaimana dengan pembaruan?</summary>
         <p>Program diperbarui secara berkala. Kabar pembaruan kami sampaikan lewat WhatsApp.</p>
       </details>
     </div>
+  </div>
+</section>
+
+<section class="section quote">
+  <div class="wrap">
+    <blockquote>Dari pembelian sampai program berjalan, kamu tidak berjalan sendirian.</blockquote>
+    <p class="muted">Pendampingan langsung lewat WhatsApp, setiap hari dengan janji temu.</p>
   </div>
 </section>
 
@@ -459,15 +715,18 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
   </div>
 </footer>
 
-<button class="fab" id="chat-open" type="button" aria-label="Buka asisten chat" aria-expanded="false" aria-controls="chat">
+<button class="fab" id="chat-open" type="button" aria-label="Buka live chat" aria-expanded="false" aria-controls="chat">
+  <span class="fab-dot" id="fab-dot" hidden></span>
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14a1 1 0 011 1v8a1 1 0 01-1 1h-8l-4 3.5V16H5a1 1 0 01-1-1V7a1 1 0 011-1z"></path></svg>
 </button>
 
-<section class="chat" id="chat" role="dialog" aria-label="Asisten WhiTeXiterr" tabindex="-1" hidden>
+<button class="fab-tip" id="fab-tip" type="button" hidden>Halo! Ada yang bisa kami bantu? 👋</button>
+
+<section class="chat" id="chat" role="dialog" aria-label="Live chat WhiTeXiterr" tabindex="-1" hidden>
   <div class="chat-head">
     <div class="chat-title">
-      <strong>Asisten WhiTeXiterr</strong>
-      <span>Balasan otomatis, bukan manusia</span>
+      <strong>Live chat WhiTeXiterr</strong>
+      <span>Jawaban cepat otomatis · admin via WhatsApp</span>
     </div>
     <button class="chat-close" id="chat-close" type="button" aria-label="Tutup chat">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
@@ -475,6 +734,7 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
   </div>
   <div class="chat-log" id="chat-log" role="log" aria-live="polite"></div>
   <div class="chips" id="chat-chips"></div>
+  <a class="chat-admin" id="chat-admin" href="#" target="_blank" rel="noopener">Lanjut dengan admin di WhatsApp</a>
   <form class="chat-form" id="chat-form" autocomplete="off">
     <input id="chat-input" type="text" placeholder="Tulis pertanyaanmu..." aria-label="Pertanyaanmu" maxlength="200">
     <button type="submit">Kirim</button>
@@ -498,6 +758,12 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
   var form = document.getElementById('chat-form');
   var input = document.getElementById('chat-input');
   var started = false;
+  var admin = document.getElementById('chat-admin'), tip = document.getElementById('fab-tip'), dot = document.getElementById('fab-dot');
+  var name = '', last = '', askName = false;
+  try { name = sessionStorage.getItem('wx-name') || ''; } catch (e) {}
+  function msgWa(q) { return 'Halo WhiTeXiterr, ' + (name ? 'saya ' + name + '. ' : '') + (q ? 'Saya mau tanya: ' + q : 'Saya mau tanya tentang programnya.'); }
+  function setAdmin() { admin.href = waLink(msgWa(last)); }
+  function hhmm() { var d = new Date(); return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2); }
 
   function waLink(text) {
     return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
@@ -558,7 +824,7 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
     ['Jam layanan', 'jam'],
     ['Perangkat', 'perangkat'],
     ['Pembaruan', 'update'],
-    ['Hubungi admin', 'manusia']
+    ['Chat dengan admin', 'manusia']
   ];
 
   function clean(s) {
@@ -589,6 +855,7 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
     var d = document.createElement('div');
     d.className = 'msg ' + role;
     d.textContent = text;
+    if (text) { var s = document.createElement('small'); s.textContent = hhmm(); d.appendChild(s); }
     log.appendChild(d);
     scrollDown();
     return d;
@@ -599,7 +866,7 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
     a.className = 'msg-wa';
     a.target = '_blank';
     a.rel = 'noopener';
-    a.href = waLink(q ? 'Halo WhiTeXiterr, saya mau tanya: ' + q : 'Halo WhiTeXiterr, saya mau tanya tentang programnya.');
+    a.href = waLink(msgWa(q));
     a.textContent = 'Lanjut di WhatsApp';
     log.appendChild(a);
     scrollDown();
@@ -617,13 +884,15 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
   }
 
   function greet() {
-    addMsg('bot', 'Halo! Saya asisten otomatis WhiTeXiterr. Mau tanya apa?');
+    if (name) addMsg('bot', 'Halo ' + name + '! Saya asisten otomatis WhiTeXiterr. Mau tanya apa?');
+    else { addMsg('bot', 'Halo! Selamat datang di WhiTeXiterr. Siapa namamu? Atau langsung pilih topik di bawah.'); askName = true; }
     CHIPS.forEach(function (c) {
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'chip-btn';
       b.textContent = c[0];
       b.addEventListener('click', function () {
+        askName = false; last = c[0]; setAdmin();
         addMsg('me', c[0]);
         respond(byId(c[1]), c[0]);
       });
@@ -634,8 +903,9 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
   function setOpen(open) {
     chat.hidden = !open;
     openBtn.setAttribute('aria-expanded', String(open));
-    openBtn.setAttribute('aria-label', open ? 'Tutup asisten chat' : 'Buka asisten chat');
+    openBtn.setAttribute('aria-label', open ? 'Tutup live chat' : 'Buka live chat');
     if (open) {
+      tip.hidden = true; dot.hidden = true;
       if (!started) { started = true; greet(); }
       chat.focus();
     } else {
@@ -644,6 +914,9 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
   }
 
   openBtn.addEventListener('click', function () { setOpen(chat.hidden); });
+  tip.addEventListener('click', function () { setOpen(true); });
+  setAdmin();
+  setTimeout(function () { if (chat.hidden && !started) { tip.hidden = false; dot.hidden = false; } }, 9000);
   closeBtn.addEventListener('click', function () { setOpen(false); });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !chat.hidden) setOpen(false);
@@ -655,6 +928,18 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
     if (!q) return;
     addMsg('me', q);
     input.value = '';
+    if (askName) {
+      askName = false;
+      if (q.length <= 24 && q.split(/\s+/).length <= 3 && !/[?0-9]/.test(q) && match(q) === FALLBACK) {
+        name = q.replace(/[^A-Za-z\u00C0-\u024F\s'.-]/g, '').trim() || q;
+        try { sessionStorage.setItem('wx-name', name); } catch (e) {}
+        setAdmin();
+        var typing = addMsg('bot', ''); typing.classList.add('typing'); typing.innerHTML = '<i></i><i></i><i></i>';
+        setTimeout(function () { typing.remove(); addMsg('bot', 'Senang kenalan, ' + name + '! Mau tanya apa? Pilih topik di bawah atau tulis pertanyaanmu.'); }, 600);
+        return;
+      }
+    }
+    last = q; setAdmin();
     ask(q);
   });
 
@@ -731,6 +1016,87 @@ h1 .hl { background: linear-gradient(90deg, #6C9BFF, #B4CCFF, #6C9BFF); backgrou
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(links).forEach(function (k) { var sec = document.getElementById(k); if (sec) spy.observe(sec); });
+  }
+  // Label hemat per hari dibanding paket pertama (dihitung otomatis).
+  var per = [];
+  document.querySelectorAll('.plan').forEach(function (p) {
+    var pr = parseInt((p.querySelector('.plan-price') || {}).textContent.replace(/\D/g, ''), 10), d = parseInt((p.querySelector('.plan-term') || {}).textContent.replace(/\D/g, ''), 10);
+    per.push({ el: p, v: pr && d ? pr / d : 0 });
+  });
+  per.forEach(function (x, i) {
+    if (!i || !x.v || !per[0].v || x.v >= per[0].v) return;
+    var s = document.createElement('span');
+    s.className = 'plan-save';
+    s.textContent = 'Hemat ' + Math.round((1 - x.v / per[0].v) * 100) + '% per hari dibanding Paket 1';
+    x.el.querySelector('.plan-top').appendChild(s);
+  });
+
+  // Bar progres scroll + huruf X mengikuti kursor.
+  var bar = document.querySelector('.scrollbar i');
+  function prog() { var m = document.documentElement.scrollHeight - innerHeight; bar.style.transform = 'scaleX(' + (m > 0 ? Math.min(1, scrollY / m) : 0) + ')'; }
+  addEventListener('scroll', prog, { passive: true }); prog();
+  var hb = document.querySelector('.hero-bleed');
+  hb.addEventListener('pointermove', function (e) {
+    var r = hb.getBoundingClientRect();
+    hb.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+    hb.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+  });
+  // Menu di layar kecil.
+  var mb = document.getElementById('menu-btn'), nv = document.getElementById('nav');
+  function menu(o) { nv.classList.toggle('open', o); mb.setAttribute('aria-expanded', String(o)); mb.setAttribute('aria-label', o ? 'Tutup menu' : 'Buka menu'); }
+  mb.addEventListener('click', function () { menu(!nv.classList.contains('open')); });
+  nv.addEventListener('click', function (e) { if (e.target.closest('a')) menu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') menu(false); });
+  matchMedia('(min-width: 760px)').addEventListener('change', function () { menu(false); });
+  // Label bagian dengan garis di depannya.
+  var EB = { fitur: 'Keunggulan', cara: 'Cara pakai', harga: 'Paket', faq: 'Tanya jawab' };
+  Object.keys(EB).forEach(function (k) {
+    var hd = document.querySelector('#' + k + ' .head');
+    if (!hd) return;
+    var s = document.createElement('span'); s.className = 'eyebrow'; s.textContent = EB[k]; hd.insertBefore(s, hd.firstChild);
+  });
+
+  // Latar jaringan titik.
+  var cv = document.getElementById('net'), cx = cv.getContext('2d'), W, H, N = [], dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size() {
+    W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.min(70, Math.round(W * H / 16000)); N = [];
+    for (var i = 0; i < n; i++) N.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3 });
+  }
+  function draw() {
+    cx.clearRect(0, 0, W, H);
+    N.forEach(function (a) {
+      if (!still) { a.x += a.vx; a.y += a.vy; if (a.x < 0 || a.x > W) a.vx *= -1; if (a.y < 0 || a.y > H) a.vy *= -1; }
+    });
+    for (var i = 0; i < N.length; i++) for (var j = i + 1; j < N.length; j++) {
+      var dx = N[i].x - N[j].x, dy = N[i].y - N[j].y, d = Math.sqrt(dx * dx + dy * dy);
+      if (d < 150) { cx.strokeStyle = 'rgba(25,214,160,' + ((1 - d / 150) * .28).toFixed(3) + ')'; cx.beginPath(); cx.moveTo(N[i].x, N[i].y); cx.lineTo(N[j].x, N[j].y); cx.stroke(); }
+    }
+    cx.fillStyle = 'rgba(25,214,160,.85)';
+    N.forEach(function (a) { cx.beginPath(); cx.arc(a.x, a.y, 1.8, 0, 6.2832); cx.fill(); });
+    if (!still) requestAnimationFrame(draw);
+  }
+  size(); draw();
+  addEventListener('resize', function () { size(); if (still) draw(); });
+  // Terminal: perintah diketik satu per satu saat terlihat.
+  var tb = document.getElementById('term');
+  if (tb) {
+    var ls = [].slice.call(tb.querySelectorAll('.tl')), calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var run = function () {
+      var i = 0;
+      (function next() {
+        if (i >= ls.length) return;
+        var l = ls[i++], c = l.querySelector('.cmd');
+        l.classList.add('on');
+        if (c && !calm) {
+          var t = c.textContent, k = 0; c.textContent = '';
+          (function ty() { c.textContent = t.slice(0, ++k); if (k < t.length) setTimeout(ty, 38); else setTimeout(next, 260); })();
+        } else setTimeout(next, calm ? 0 : 200);
+      })();
+    };
+    if (calm || !('IntersectionObserver' in window)) ls.forEach(function (l) { l.classList.add('on'); });
+    else { var tio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { tio.disconnect(); run(); } }, { threshold: 0.35 }); tio.observe(tb); }
   }
 })();
 </script>
