@@ -160,6 +160,29 @@ h1 .hl { color: var(--accent); }
 /* Floating chat */
 .fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px -8px rgba(108, 155, 255, 0.65); transition: transform .2s; }
 
+/* Chatbot */
+button.fab { border: 0; padding: 0; cursor: pointer; font: inherit; }
+.chat { position: fixed; z-index: 70; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 72px); width: min(380px, calc(100vw - 32px)); height: min(560px, calc(100vh - 120px)); height: min(560px, calc(100dvh - 120px)); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 18px; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.85); }
+.chat[hidden] { display: none; }
+.chat:focus { outline: none; }
+.chat-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 8px 8px 16px; border-bottom: 1px solid var(--line); background: rgba(108, 155, 255, 0.06); }
+.chat-title { display: flex; flex-direction: column; min-width: 0; }
+.chat-title strong { font-family: var(--font-display); font-weight: 500; font-size: 16px; }
+.chat-title span { font-size: 12px; color: var(--muted); }
+.chat-close { flex: 0 0 auto; width: 44px; height: 44px; border: 0; background: transparent; color: var(--muted); cursor: pointer; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.chat-log { flex: 1; min-height: 0; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; overscroll-behavior: contain; }
+.msg { max-width: 86%; padding: 10px 14px; border-radius: 14px; font-size: 15px; line-height: 1.5; white-space: pre-line; overflow-wrap: anywhere; }
+.msg.bot { align-self: flex-start; background: var(--bg); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+.msg.me { align-self: flex-end; background: var(--accent); color: var(--on-accent); border-bottom-right-radius: 4px; }
+.msg-wa { align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid var(--accent-line); color: var(--accent); font-weight: 600; font-size: 14px; }
+.chips { flex: 0 0 auto; display: flex; gap: 8px; padding: 0 16px 12px; overflow-x: auto; }
+.chip-btn { flex: 0 0 auto; white-space: nowrap; min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--text); font: inherit; font-size: 14px; cursor: pointer; }
+.chat-form { flex: 0 0 auto; display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); }
+.chat-form input { flex: 1; min-width: 0; min-height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--bg); color: var(--text); font: inherit; font-size: 16px; }
+.chat-form input::placeholder { color: var(--muted); }
+.chat-form input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.chat-form button { flex: 0 0 auto; min-height: 48px; padding: 0 18px; border: 0; border-radius: 10px; background: var(--accent); color: var(--on-accent); font: inherit; font-weight: 600; cursor: pointer; }
+
 @media (min-width: 760px) { .nav { display: flex; } }
 @media (min-width: 960px) { .step:not(:last-child) .line { display: block; } }
 @media (hover: hover) {
@@ -399,8 +422,201 @@ h1 .hl { color: var(--accent); }
   </div>
 </footer>
 
-<a class="fab" href="https://wa.me/6283134125339?text=Halo%20WhiTeXiterr%2C%20saya%20mau%20tanya%20tentang%20programnya." aria-label="Chat lewat WhatsApp">
+<button class="fab" id="chat-open" type="button" aria-label="Buka asisten chat" aria-expanded="false" aria-controls="chat">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14a1 1 0 011 1v8a1 1 0 01-1 1h-8l-4 3.5V16H5a1 1 0 01-1-1V7a1 1 0 011-1z"></path></svg>
-</a>
+</button>
+
+<section class="chat" id="chat" role="dialog" aria-label="Asisten WhiTeXiterr" tabindex="-1" hidden>
+  <div class="chat-head">
+    <div class="chat-title">
+      <strong>Asisten WhiTeXiterr</strong>
+      <span>Balasan otomatis, bukan manusia</span>
+    </div>
+    <button class="chat-close" id="chat-close" type="button" aria-label="Tutup chat">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+    </button>
+  </div>
+  <div class="chat-log" id="chat-log" role="log" aria-live="polite"></div>
+  <div class="chips" id="chat-chips"></div>
+  <form class="chat-form" id="chat-form" autocomplete="off">
+    <input id="chat-input" type="text" placeholder="Tulis pertanyaanmu..." aria-label="Pertanyaanmu" maxlength="200">
+    <button type="submit">Kirim</button>
+  </form>
+</section>
+
+<script>
+(function () {
+  // Pengaturan: ubah di sini kalau data bisnismu berubah.
+  // Harga paket dibaca otomatis dari bagian "Paket" di halaman ini.
+  var WA = '6283134125339';
+  var INFO = { perangkat: 'Android', versi: 'v1.0', jam: 'setiap hari, dengan janji temu' };
+
+  var chat = document.getElementById('chat');
+  var openBtn = document.getElementById('chat-open');
+  var closeBtn = document.getElementById('chat-close');
+  var log = document.getElementById('chat-log');
+  var chipsBox = document.getElementById('chat-chips');
+  var form = document.getElementById('chat-form');
+  var input = document.getElementById('chat-input');
+  var started = false;
+
+  function waLink(text) {
+    return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+  }
+
+  function plans() {
+    var out = [];
+    document.querySelectorAll('.plan').forEach(function (p) {
+      var n = p.querySelector('.plan-name');
+      var pr = p.querySelector('.plan-price');
+      var t = p.querySelector('.plan-term');
+      if (n && pr && t) out.push(n.textContent.trim() + ': ' + pr.textContent.trim() + ' untuk ' + t.textContent.trim());
+    });
+    return out;
+  }
+
+  var KB = [
+    { id: 'harga', keys: ['harga', 'paket', 'biaya', 'berapa', 'tarif', 'murah'],
+      answer: function () {
+        var p = plans();
+        return (p.length ? 'Paket yang tersedia:\n- ' + p.join('\n- ') + '\n\n' : '') +
+          'Semua paket berisi akses program penuh, panduan pemasangan, dan dukungan lewat WhatsApp.';
+      } },
+    { id: 'beli', keys: ['beli', 'pesan', 'pesan paket', 'beli paket', 'order', 'daftar', 'cara bayar', 'pembayaran', 'bayar', 'transfer'],
+      answer: 'Caranya tiga langkah:\n1. Hubungi kami lewat WhatsApp dan sebutkan waktu yang cocok.\n2. Pilih paket, lalu selesaikan pembayaran sesuai arahan dari kami.\n3. Pasang dan pakai program dengan panduan dari kami.',
+      wa: true },
+    { id: 'jam', keys: ['jam', 'kapan', 'buka', 'waktu', 'janji', 'layanan'],
+      answer: function () { return 'Layanan berjalan ' + INFO.jam + '. Sebutkan waktu yang kamu mau lewat WhatsApp.'; },
+      wa: true },
+    { id: 'perangkat', keys: ['perangkat', 'android', 'ios', 'iphone', 'windows', 'hp', 'cocok', 'support', 'spesifikasi'],
+      answer: function () { return 'Program ini berjalan di perangkat ' + INFO.perangkat + '. Untuk memastikan perangkatmu cocok, tanyakan lewat WhatsApp sebelum membeli.'; },
+      wa: true },
+    { id: 'update', keys: ['update', 'pembaruan', 'versi', 'upgrade', 'terbaru'],
+      answer: function () { return 'Versi saat ini ' + INFO.versi + '. Program diperbarui secara berkala, dan kabarnya kami sampaikan lewat WhatsApp.'; } },
+    { id: 'bantuan', keys: ['bantu', 'bantuan', 'kendala', 'error', 'masalah', 'gagal', 'tidak bisa', 'gak bisa', 'nggak bisa', 'pasang', 'install', 'instal', 'macet', 'rusak', 'tutorial', 'panduan'],
+      answer: 'Kami bantu langkah demi langkah. Kirim pesan lewat WhatsApp dan ceritakan kendalamu.',
+      wa: true },
+    { id: 'garansi', keys: ['garansi', 'refund', 'kembali uang', 'aman', 'legit', 'terpercaya', 'jaminan', 'virus'],
+      answer: 'Untuk garansi dan pertanyaan khusus seperti ini, tanyakan langsung lewat WhatsApp supaya jawabannya pasti.',
+      wa: true },
+    { id: 'manusia', keys: ['admin', 'manusia', 'cs', 'operator', 'wa', 'whatsapp', 'hubungi', 'kontak', 'telepon', 'nomor'],
+      answer: 'Silakan lanjut ngobrol dengan kami lewat WhatsApp. Nomor kami 0831-3412-5339.',
+      wa: true },
+    { id: 'salam', keys: ['halo', 'hai', 'hi', 'hello', 'assalamualaikum', 'selamat pagi', 'selamat siang', 'selamat sore', 'selamat malam', 'permisi'],
+      answer: 'Halo! Saya asisten otomatis WhiTeXiterr. Pilih topik di bawah atau tulis pertanyaanmu.' },
+    { id: 'terimakasih', keys: ['terima kasih', 'makasih', 'thanks', 'thx', 'trims'],
+      answer: 'Sama-sama! Kalau ada yang mau ditanyakan lagi, tulis saja.' }
+  ];
+
+  var FALLBACK = {
+    answer: 'Maaf, saya belum paham pertanyaan itu. Coba pilih salah satu topik di bawah, atau tanyakan langsung lewat WhatsApp.',
+    wa: true
+  };
+
+  var CHIPS = [
+    ['Harga paket', 'harga'],
+    ['Cara membeli', 'beli'],
+    ['Jam layanan', 'jam'],
+    ['Perangkat', 'perangkat'],
+    ['Pembaruan', 'update'],
+    ['Hubungi admin', 'manusia']
+  ];
+
+  function clean(s) {
+    var words = s.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim().split(' ');
+    return ' ' + words.map(function (w) {
+      return w.length > 4 ? w.replace(/(nya|kah|lah)$/, '') : w;
+    }).join(' ') + ' ';
+  }
+
+  function match(q) {
+    var t = clean(q), best = null, top = 0;
+    KB.forEach(function (e) {
+      var s = 0;
+      e.keys.forEach(function (k) { if (t.indexOf(clean(k)) !== -1) s++; });
+      if (s > top) { top = s; best = e; }
+    });
+    return best || FALLBACK;
+  }
+
+  function byId(id) {
+    for (var i = 0; i < KB.length; i++) if (KB[i].id === id) return KB[i];
+    return FALLBACK;
+  }
+
+  function scrollDown() { log.scrollTop = log.scrollHeight; }
+
+  function addMsg(role, text) {
+    var d = document.createElement('div');
+    d.className = 'msg ' + role;
+    d.textContent = text;
+    log.appendChild(d);
+    scrollDown();
+    return d;
+  }
+
+  function addWa(q) {
+    var a = document.createElement('a');
+    a.className = 'msg-wa';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.href = waLink(q ? 'Halo WhiTeXiterr, saya mau tanya: ' + q : 'Halo WhiTeXiterr, saya mau tanya tentang programnya.');
+    a.textContent = 'Lanjut di WhatsApp';
+    log.appendChild(a);
+    scrollDown();
+  }
+
+  function respond(entry, q) {
+    var typing = addMsg('bot', '...');
+    setTimeout(function () {
+      typing.remove();
+      addMsg('bot', typeof entry.answer === 'function' ? entry.answer() : entry.answer);
+      if (entry.wa) addWa(q);
+    }, 350);
+  }
+
+  function greet() {
+    addMsg('bot', 'Halo! Saya asisten otomatis WhiTeXiterr. Mau tanya apa?');
+    CHIPS.forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip-btn';
+      b.textContent = c[0];
+      b.addEventListener('click', function () {
+        addMsg('me', c[0]);
+        respond(byId(c[1]), c[0]);
+      });
+      chipsBox.appendChild(b);
+    });
+  }
+
+  function setOpen(open) {
+    chat.hidden = !open;
+    openBtn.setAttribute('aria-expanded', String(open));
+    openBtn.setAttribute('aria-label', open ? 'Tutup asisten chat' : 'Buka asisten chat');
+    if (open) {
+      if (!started) { started = true; greet(); }
+      chat.focus();
+    } else {
+      openBtn.focus();
+    }
+  }
+
+  openBtn.addEventListener('click', function () { setOpen(chat.hidden); });
+  closeBtn.addEventListener('click', function () { setOpen(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !chat.hidden) setOpen(false);
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var q = input.value.trim();
+    if (!q) return;
+    addMsg('me', q);
+    input.value = '';
+    respond(match(q), q);
+  });
+})();
+</script>
 </body>
 </html>
